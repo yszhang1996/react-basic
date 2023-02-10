@@ -1,0 +1,92 @@
+.App {
+    text-align: center;
+  }
+  
+  .tab span{
+    cursor: pointer;
+  }
+  
+  .actived{
+    color: red;
+  }
+  
+  .addComment{
+    width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .addCommentContent{
+    flex: 1;
+    min-height: 90px;
+  }
+  
+  .confirmAdd{
+    margin-left: 20px;
+  }
+  
+  .commentWrapper{
+    width: 1200px;
+    /* border: 1px solid red; */
+    margin: 20px auto;
+  }
+  
+  .commentList{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+  }
+  
+  .img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .right{
+    flex: 1;
+    border-top: 1px solid #ccc;
+    min-height: 100px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .commentName{
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .commentContent{
+    margin-bottom: 5px;
+    flex: 1;
+  }
+  
+  .commentFooter{
+    font-size: 14px;
+    color: #ccc;
+    display: flex;
+  }
+  
+  .commentFooter div{
+    margin: 0 5px;
+  }
+  
+  .commentDelete{
+    cursor: pointer;
+  }
+  
+  .commentDelete:hover{
+    color: #a6a6a6;
+  }
+  

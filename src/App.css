@@ -2,37 +2,90 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tab span{
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.actived{
+  color: red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.addComment{
+  width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addCommentContent{
+  flex: 1;
+  min-height: 90px;
+}
+
+.confirmAdd{
+  margin-left: 20px;
+}
+
+.commentWrapper{
+  width: 1200px;
+  /* border: 1px solid red; */
+  margin: 20px auto;
+}
+
+.commentList{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img{
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+
+.img img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.right{
+  flex: 1;
+  border-top: 1px solid #ccc;
+  min-height: 100px;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.commentName{
+  font-size: 14px;
+  margin: 5px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.commentContent{
+  margin-bottom: 5px;
+  flex: 1;
+}
+
+.commentFooter{
+  font-size: 14px;
+  color: #ccc;
+  display: flex;
+}
+
+.commentFooter div{
+  margin: 0 5px;
+}
+
+.commentDelete{
+  cursor: pointer;
+}
+
+.commentDelete:hover{
+  color: #a6a6a6;
 }
