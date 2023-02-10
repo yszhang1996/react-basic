@@ -17,6 +17,7 @@ export default function Tabbar() {
                 <option value='/comment'>案例一，实现评论的增删改查</option>
                 <option value='/communication'>案例二，组件通信</option>
                 <option value='/antd'>案例三，ant-design组件库</option>
+                <option value='/todo'>案例四，mobx状态管理</option>
             </select>
         </div>
     )
