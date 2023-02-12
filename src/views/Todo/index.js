@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../store';
 import './index.css'
@@ -7,6 +8,7 @@ const { Search } = Input;
 
 function Todo() {
     const { todoStore } = useStore()
+    const [searchData, setSearchData] = useState()
 
     const onChange = (e, id) => {
         todoStore.checkItem(e.target.checked, id);
@@ -14,7 +16,16 @@ function Todo() {
     const changeAll = (e) => {
         todoStore.checkItemAll(e.target.checked)
     }
-    const onAdd = () => { }
+    const onAdd = (value, e) => {
+        console.log(value);
+        if (!value) return;
+        todoStore.addItem({
+            id: uuidv4(),
+            name: value,
+            isDone: false,
+        })
+        setSearchData('')
+    }
 
     return (
         <div className='container'>
@@ -28,6 +39,8 @@ function Todo() {
                         allowClear
                         enterButton="添加"
                         size="large"
+                        value={searchData}
+                        onChange={(e) => { setSearchData(e.target.value) }}
                         onSearch={onAdd}
                     />
                 </div>
@@ -40,13 +53,14 @@ function Todo() {
                     <div className='item-list-content'>
                         <span className={item.isDone ? 'completed' : ''}>{item.name}</span>
                     </div>
+                    <div className='item-list-delete' onClick={() => { todoStore.deleteItem(item.id) }}>X</div>
                 </div>
             ))}
             <div className='item-list'>
                 <div className='item-list-check'>
                 </div>
                 <div className='item-list-content'>
-                    <span>任务总数：3，已完成：2</span>
+                    <span>任务总数：{todoStore.list.length}，已完成：{todoStore.isDoneNum}</span>
                 </div>
             </div>
         </div>

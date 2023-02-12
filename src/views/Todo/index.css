@@ -13,6 +13,15 @@
     border-bottom: 1px solid #ccc;
 }
 
+.item-list-delete{
+    display: none;
+    cursor: pointer;
+}
+
+.item-list:hover .item-list-delete{
+    display: block;
+}
+
 .item-list-check {
     width: 50px;
 }

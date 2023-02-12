@@ -22,8 +22,17 @@ class TodoStore {
             item.isDone = status
         })
     }
+    addItem = (item) => {
+        this.list.push(item)
+    }
+    deleteItem = (id) => {
+        this.list = this.list.filter(item => item.id !== id)
+    }
     get isAll() {
-        return this.list.every(item => item.isDone)
+        return this.list.every(item => item.isDone) && this.list.length
+    }
+    get isDoneNum() {
+        return this.list.filter(item => item.isDone).length
     }
     constructor() {
         makeAutoObservable(this)
